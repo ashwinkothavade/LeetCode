@@ -7,7 +7,6 @@ public:
         unordered_map<int,int>cf;
         int dc=0;
         for(int i=0;i<n;i++){
-            unordered_set<int>balls;
             int x=queries[i][0];
             int y=queries[i][1];
             if(mp.count(x)){
