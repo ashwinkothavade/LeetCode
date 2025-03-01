@@ -9,9 +9,6 @@ public:
             int diff=original[i]-original[i-1];
             lower=max(lower+diff,bound[i][0]);
             upper=min(upper+diff,bound[i][1]);
-            if(ans<0){
-                return 0;
-            }
             ans=min(ans,upper-lower+1);
             if(ans<0){
                 return 0;
