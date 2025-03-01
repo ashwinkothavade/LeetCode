@@ -8,18 +8,27 @@ public:
                 nums[i+1]=0;
             }
         }
-        int zeroes=0;
-        vector<int>temp;
-        for(int i=0;i<n;i++){
-            if(nums[i]==0){
-                zeroes++;
-            }else{
-                temp.push_back(nums[i]);
-            }
+        int i=0;
+        for(int j=0;j<n;j++){
+            if(nums[j]!=0)
+            nums[i++]=nums[j];
         }
-        for(int i=0;i<zeroes;i++){
-            temp.push_back(0);
+        for(int j=i;j<n;j++){
+            nums[j]=0;
         }
-        return temp;       
+        return nums;
+        // int zeroes=0;
+        // vector<int>temp;
+        // for(int i=0;i<n;i++){
+        //     if(nums[i]==0){
+        //         zeroes++;
+        //     }else{
+        //         temp.push_back(nums[i]);
+        //     }
+        // }
+        // for(int i=0;i<zeroes;i++){
+        //     temp.push_back(0);
+        // }
+        // return temp;       
     }
 };
