@@ -8,7 +8,7 @@ class Solution {
         return count >= k;
     }
 public:
-    int maximumCandies(std::vector<int>& candies, long long k) {
+    int maximumCandies(vector<int>& candies, long long k) {
         long long low = 1; 
         long long high = *max_element(candies.begin(), candies.end());
         
