@@ -3,7 +3,7 @@
 #include <algorithm>
 
 class Solution {
-    bool pred(const std::vector<int>& candies, long long k, long long mid) {
+    bool pred(vector<int>& candies, long long k, long long mid) {
         long long count = 0;
         for (int candy : candies) {
             count += candy / mid; 
