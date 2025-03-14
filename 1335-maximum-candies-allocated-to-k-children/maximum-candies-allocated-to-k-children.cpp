@@ -1,6 +1,3 @@
-#include <vector>
-#include <numeric>
-#include <algorithm>
 
 class Solution {
     bool pred(vector<int>& candies, long long k, long long mid) {
