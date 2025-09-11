@@ -1,25 +1,34 @@
 class Solution {
 public:
-    Node* connect(Node* root) {
-        if(root == NULL) return NULL;
-        Node* head = root;
-        while(head != NULL) {
-            Node* temp = new Node(0);
-            Node* dummy = temp;
-            while(head != NULL) {
-                if(head->left != NULL) {
-                    temp->next = head->left;
-                    temp = temp->next;
+    Node* connect(Node* head) {
+        Node* parent = head;
+        Node* childHead = nullptr;
+        Node* child = nullptr;
+
+        while (parent != nullptr) {
+            while (parent != nullptr) {
+                if (parent->left != nullptr) {
+                    if (childHead == nullptr) {
+                        childHead = parent->left;
+                    } else {
+                        child->next = parent->left;
+                    }
+                    child = parent->left;
                 }
-                if(head->right != NULL) {
-                    temp->next = head->right;
-                    temp = temp->next;
+                if (parent->right != nullptr) {
+                    if (childHead == nullptr) {
+                        childHead = parent->right;
+                    } else {
+                        child->next = parent->right;
+                    }
+                    child = parent->right;
                 }
-                head = head->next;
+                parent = parent->next;
             }
-            head = dummy->next;
-            delete dummy;
+            parent = childHead;
+            childHead = nullptr;
+            child = nullptr;
         }
-        return root;
+        return head;
     }
 };
