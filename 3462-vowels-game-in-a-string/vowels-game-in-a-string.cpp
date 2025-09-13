@@ -10,7 +10,6 @@ public:
         }
         if(cnt1==0)return false;
         if(cnt1%2==1)return true;
-        //only one possiblity for alice to win is that there must be a consonent before the first vowel or after the last vowel then alice will win
         return true;
     }
 };
