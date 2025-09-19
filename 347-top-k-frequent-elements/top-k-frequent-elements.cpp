@@ -12,12 +12,11 @@ public:
                 pq.pop();
             }
         }
-        vector<int>temp;
-        while(!pq.empty())
-        {
-            temp.push_back(pq.top().second);
+        vector<int>ans;
+        while(!pq.empty()){
+            ans.push_back(pq.top().second);
             pq.pop();
         }
-        return temp;
-    }
+        return ans;
+   }
 };
