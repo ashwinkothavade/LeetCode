@@ -8,9 +8,7 @@ public:
             int y1=points[i][1];
             int x2=points[i+1][0];
             int y2=points[i+1][1];
-            int distance=min(abs(x1-x2),abs(y1-y2));
-            sum+=distance;
-            sum+=max(abs(x1-x2),abs(y1-y2))-distance;
+            sum+=max(abs(x1-x2),abs(y1-y2));
         }
         return sum;
     }
