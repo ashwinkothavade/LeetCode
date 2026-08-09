@@ -1,4 +1,3 @@
-#define ll pair<int,int>
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
@@ -6,7 +5,7 @@ public:
         for(auto it:nums){
             mp[it]++;
         }
-        priority_queue<ll,vector<ll>,greater<>>pq;
+        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
         for(auto it:mp){
             pq.push({it.second,it.first});
             if(pq.size()>k){
@@ -15,9 +14,10 @@ public:
         }
         vector<int>ans;
         while(!pq.empty()){
-            ans.push_back(pq.top().second);
+            auto it=pq.top();
             pq.pop();
+            ans.push_back(it.second);
         }
         return ans;
-   }
+    }
 };
