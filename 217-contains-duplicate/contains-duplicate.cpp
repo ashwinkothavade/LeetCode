@@ -3,10 +3,9 @@ public:
     bool containsDuplicate(vector<int>& nums) {
         int n=nums.size();
         unordered_map<int,int>mp;
-        for(auto it:nums){
-            if(mp.find(it)==mp.end()){
-                mp[it]++;
-            }else{
+        for(int i=0;i<n;i++){
+            mp[nums[i]]++;
+            if(mp[nums[i]]>1){
                 return true;
             }
         }
